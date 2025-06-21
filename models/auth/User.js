@@ -18,6 +18,14 @@ const UserSchema = new Schema(
             type: String,
             required: true,
         },
+        lname: {
+            type: String,
+            required: true,
+        },
+        dob: {
+            type: String,
+            required: false,
+        },
         status: {
             type: Number,
             default: 1,

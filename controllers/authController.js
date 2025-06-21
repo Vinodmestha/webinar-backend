@@ -23,7 +23,7 @@ const errorHandler = (res, status, msg) => {
 };
 
 exports.signUp = (req, res, next) => {
-    const { email, name, password, mobile, status } = req?.body;
+    const { email, name,lname, dob, password, mobile, status } = req?.body;
     console.log("Password", name);
     if (!validateEmail(email)) {
         return errorHandler(res, 422, "Invalid email");
@@ -51,6 +51,8 @@ exports.signUp = (req, res, next) => {
                         password: encryptedPass,
                         mobile: mobile,
                         name: name,
+                        lname:lname,
+                        dob:dob,
                         status: status,
                     });
                     return user.save();
